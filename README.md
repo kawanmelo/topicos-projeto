@@ -34,7 +34,6 @@ gerenciamento-funcionarios/
 - **Node.js** com **TypeScript**
 - **Express** - Framework web
 - **Prisma** - ORM para banco de dados
-- **SQLite** - Banco de dados (desenvolvimento)
 - **Zod** - Validação de schemas
 - **Swagger** - Documentação da API
 
