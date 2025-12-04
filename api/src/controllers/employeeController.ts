@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import * as employeeService from '../services/employeeService';
-import { EmployeeSchema } from '../schemas/employee.schema';
+import { EmployeeQuerySchema, EmployeeSchema } from '../schemas/employee.schema';
 
 export const createEmployee = async (req: Request, res: Response) => {
     try {
@@ -16,9 +16,11 @@ export const createEmployee = async (req: Request, res: Response) => {
 
 export const getAllEmployees = async (req: Request, res: Response) => {
     try {
-        const employees = await employeeService.getAll();
+        const filters = EmployeeQuerySchema.parse(req.query);
+        const employees = await employeeService.getAll(filters);
         return res.json(employees);
     } catch (error: any) {
+        if (error.name === 'ZodError') return res.status(400).json({ message: error.errors });
         return res.status(500).json({ message: error.message });
     }
 };
@@ -52,6 +54,15 @@ export const deleteEmployee = async (req: Request, res: Response) => {
         return res.status(204).send();
     } catch (error: any) {
         if (error.code === 'P2025') return res.status(404).json({ message: 'Funcionário não encontrado.' });
+        return res.status(500).json({ message: error.message });
+    }
+};
+
+export const getEmployeeStats = async (_req: Request, res: Response) => {
+    try {
+        const stats = await employeeService.getStats();
+        return res.json(stats);
+    } catch (error: any) {
         return res.status(500).json({ message: error.message });
     }
 };

@@ -72,12 +72,25 @@ cd api
 npm install
 ```
 
-3. Execute as migrações do banco de dados:
+3. Configure as variáveis de ambiente (obrigatório para o Prisma). Copie o arquivo de exemplo e ajuste a URL do Postgres:
+```bash
+cp .env.example .env
+```
+
+Exemplo de configuração:
+```env
+DATABASE_URL="postgresql://USER:PASSWORD@localhost:5432/gerenciamento_funcionarios?schema=public"
+DIRECT_URL="postgresql://USER:PASSWORD@localhost:5432/gerenciamento_funcionarios?schema=public"
+PORT=3000
+CORS_ORIGIN=http://localhost:5173
+```
+
+4. Execute as migrações do banco de dados:
 ```bash
 npm run prisma:migrate
 ```
 
-4. Inicie o servidor de desenvolvimento:
+5. Inicie o servidor de desenvolvimento:
 ```bash
 npm run dev
 ```
