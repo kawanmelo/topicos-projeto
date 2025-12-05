@@ -27,6 +27,7 @@ export const Navbar = () => {
                 mb: 4,
                 background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
                 boxShadow: '0px 4px 20px rgba(99, 102, 241, 0.3)',
+                borderRadius: '0',
             }}
         >
             <Toolbar sx={{ py: 1 }}>
