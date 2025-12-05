@@ -147,7 +147,7 @@ export const EmployeeList = () => {
             </Box>
 
             <Grid container spacing={2} mb={3}>
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid xs={12} sm={6} md={3}>
                     <TextField
                         fullWidth
                         label="Buscar (nome, email, cargo)"
@@ -156,7 +156,7 @@ export const EmployeeList = () => {
                         onChange={handleFilterChange}
                     />
                 </Grid>
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid xs={12} sm={6} md={3}>
                     <TextField
                         fullWidth
                         label="Filtrar por cargo"
@@ -165,7 +165,7 @@ export const EmployeeList = () => {
                         onChange={handleFilterChange}
                     />
                 </Grid>
-                <Grid item xs={12} sm={6} md={2}>
+                <Grid xs={12} sm={6} md={2}>
                     <TextField
                         fullWidth
                         label="Salário mínimo"
@@ -175,7 +175,7 @@ export const EmployeeList = () => {
                         onChange={handleFilterChange}
                     />
                 </Grid>
-                <Grid item xs={12} sm={6} md={2}>
+                <Grid xs={12} sm={6} md={2}>
                     <TextField
                         fullWidth
                         label="Salário máximo"
@@ -185,7 +185,7 @@ export const EmployeeList = () => {
                         onChange={handleFilterChange}
                     />
                 </Grid>
-                <Grid item xs={12} sm={6} md={2}>
+                <Grid xs={12} sm={6} md={2}>
                     <FormControl fullWidth>
                         <InputLabel id="sortBy-label">Ordenar por</InputLabel>
                         <Select
@@ -204,7 +204,7 @@ export const EmployeeList = () => {
                         </Select>
                     </FormControl>
                 </Grid>
-                <Grid item xs={12} sm={6} md={3} display="flex" alignItems="center" gap={2}>
+                <Grid xs={12} sm={6} md={3} display="flex" alignItems="center" gap={2}>
                     <ToggleButtonGroup
                         color="primary"
                         value={filters.sortOrder}
@@ -216,7 +216,7 @@ export const EmployeeList = () => {
                         <ToggleButton value="desc">Desc</ToggleButton>
                     </ToggleButtonGroup>
                 </Grid>
-                <Grid item xs={12} display="flex" gap={2} justifyContent="flex-end">
+                <Grid xs={12} display="flex" gap={2} justifyContent="flex-end">
                     <Button variant="outlined" onClick={handleClearFilters}>
                         Limpar
                     </Button>
@@ -228,7 +228,7 @@ export const EmployeeList = () => {
 
             {stats && (
                 <Grid container spacing={2} mb={3}>
-                    <Grid item xs={12} sm={6} md={3}>
+                    <Grid xs={12} sm={6} md={3}>
                         <Paper sx={{ p: 2 }}>
                             <Typography variant="subtitle2" color="text.secondary">
                                 Funcionários ativos
@@ -236,7 +236,7 @@ export const EmployeeList = () => {
                             <Typography variant="h5">{stats.totalEmployees}</Typography>
                         </Paper>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
+                    <Grid xs={12} sm={6} md={3}>
                         <Paper sx={{ p: 2 }}>
                             <Typography variant="subtitle2" color="text.secondary">
                                 Média salarial
@@ -244,7 +244,7 @@ export const EmployeeList = () => {
                             <Typography variant="h5">{formatCurrency(stats.averageSalary)}</Typography>
                         </Paper>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
+                    <Grid xs={12} sm={6} md={3}>
                         <Paper sx={{ p: 2 }}>
                             <Typography variant="subtitle2" color="text.secondary">
                                 Folha total
@@ -252,7 +252,7 @@ export const EmployeeList = () => {
                             <Typography variant="h5">{formatCurrency(stats.totalPayroll)}</Typography>
                         </Paper>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
+                    <Grid xs={12} sm={6} md={3}>
                         <Paper sx={{ p: 2 }}>
                             <Typography variant="subtitle2" color="text.secondary">
                                 Maior salário
